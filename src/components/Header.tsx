@@ -20,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
     { id: 'projects', label: 'Projects', path: '/projects' },
     { id: 'experience', label: 'Experience', path: '/experience' },
     { id: 'achievements', label: 'Achievements', path: '/achievements' },
+    { id: 'gallery', label: 'Gallery', path: '/gallery' },
     { id: 'contact', label: 'Contact', path: '/contact' },
   ];
 

@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global typography */
+html,
+body,
+#root {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span,
+a,
+label,
+button,
+input,
+textarea,
+select {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 /* Custom animations */
 @keyframes fade-in-up {
   from {
@@ -172,4 +197,5 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
 }

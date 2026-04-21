@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Trophy, Award, Star, Users, Target, Zap } from 'lucide-react';
+import { Trophy, Award, Star, Target, Zap } from 'lucide-react';
 
 interface CounterProps {
   end: number;

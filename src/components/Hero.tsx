@@ -1,43 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import { FileText, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowRight, FileText, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import DirectEyeContact from '../assests/images/EyeContactOnLap.png';
 
+const ROLES = ['Software Engineer', 'Full Stack Developer', 'Problem Solver'];
 
 const Hero: React.FC = () => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const phrases = ['Software Engineer', 'Full Stack Developer', 'Problem Solver', ''];
+  const [displayRole, setDisplayRole] = useState('');
+  const [roleIndex, setRoleIndex] = useState(0);
 
   useEffect(() => {
-    const currentPhrase = phrases[currentIndex];
+    const currentRole = ROLES[roleIndex];
     let charIndex = 0;
     let isDeleting = false;
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
-    const typeWriter = () => {
-      if (!isDeleting && charIndex < currentPhrase.length) {
-        setDisplayText(currentPhrase.slice(0, charIndex + 1));
-        charIndex++;
-        timeout = setTimeout(typeWriter, 100);
-      } else if (!isDeleting && charIndex === currentPhrase.length) {
+    const updateRoleText = () => {
+      if (!isDeleting && charIndex < currentRole.length) {
+        setDisplayRole(currentRole.slice(0, charIndex + 1));
+        charIndex += 1;
+        timeout = setTimeout(updateRoleText, 90);
+      } else if (!isDeleting && charIndex === currentRole.length) {
         timeout = setTimeout(() => {
           isDeleting = true;
-          typeWriter();
-        }, 2000);
+          updateRoleText();
+        }, 1600);
       } else if (isDeleting && charIndex > 0) {
-        setDisplayText(currentPhrase.slice(0, charIndex - 1));
-        charIndex--;
-        timeout = setTimeout(typeWriter, 50);
-      } else if (isDeleting && charIndex === 0) {
+        setDisplayRole(currentRole.slice(0, charIndex - 1));
+        charIndex -= 1;
+        timeout = setTimeout(updateRoleText, 45);
+      } else {
         isDeleting = false;
-        setCurrentIndex((prev) => (prev + 1) % phrases.length);
-        timeout = setTimeout(typeWriter, 500);
+        setRoleIndex((prev) => (prev + 1) % ROLES.length);
       }
     };
 
-    timeout = setTimeout(typeWriter, 1000);
+    timeout = setTimeout(updateRoleText, 250);
     return () => clearTimeout(timeout);
-  }, [currentIndex]);
+  }, [roleIndex]);
 
   const handleViewResume = () => {
     if (typeof window !== 'undefined') {
@@ -45,120 +44,132 @@ const Hero: React.FC = () => {
         'https://drive.google.com/file/d/1sD89LhULPxHyB2FoTNJWk7Dbnk6Itbb7/view?usp=drive_link'
       );
     }
-  };  
+  };
 
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-900 dark:text-white"
+      className="relative overflow-hidden border-b border-slate-200 bg-slate-50 text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100"
     >
-      <div className="absolute inset-0">
-        <div className="absolute -top-40 -left-32 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl"></div>
-        <div className="absolute top-1/3 right-10 h-72 w-72 rounded-full bg-purple-500/20 blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/4 h-56 w-56 rounded-full bg-sky-500/20 blur-3xl"></div>
-        <div className="absolute inset-0 opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(148,163,184,0.12) 1px, transparent 0)' }}></div>
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(148,163,184,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(148,163,184,0.08)_1px,transparent_1px)] bg-[size:28px_28px] dark:bg-[linear-gradient(to_right,rgba(71,85,105,0.14)_1px,transparent_1px),linear-gradient(to_bottom,rgba(71,85,105,0.14)_1px,transparent_1px)]" />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col-reverse gap-14 px-6 py-20 lg:flex-row lg:items-center lg:justify-between">
-        <div className="w-full space-y-10 lg:w-[56%]">
-          <div className="space-y-5">
-            <h1 className="text-3xl font-bold leading-tight sm:text-5xl lg:text-6xl text-gray-900 dark:text-white">
-              Hi, I'm <span className="bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">MANMATHAN S</span>
+      <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-8 lg:py-24">
+        <div className="space-y-8">
+          <div className="inline-flex items-center gap-2 rounded-md border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-slate-600 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+            Portfolio
+          </div>
+
+          <div className="space-y-4">
+            <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              MANMATHAN S
             </h1>
-            <div className="flex items-center gap-2 text-xl font-semibold text-slate-700 dark:text-slate-200 sm:text-2xl">
-              <span>{displayText}</span>
-              <span className="h-2 w-2 animate-pulse rounded-full bg-sky-400"></span>
-            </div>
-            <p className="max-w-xl text-base text-slate-700 dark:text-slate-300 sm:text-lg">
-              A multidisciplinary full stack developer and ML enthusiast blending clean engineering with meaningful design. I build production-grade AI
-              products, lead teams with empathy, and turn complex ideas into beautiful, usable software.
+            <p className="text-lg font-semibold text-sky-700 dark:text-sky-400 sm:text-xl">
+              {displayRole}
+              <span className="ml-1 inline-block h-5 w-0.5 animate-pulse bg-sky-700 align-middle dark:bg-sky-400" />
+            </p>
+            <p className="max-w-2xl text-base leading-relaxed text-slate-700 dark:text-slate-300 sm:text-lg">
+              I design and build dependable digital products with a strong focus on clean architecture,
+              performance, and user experience. My work combines practical engineering with business-aware
+              problem solving to deliver measurable results.
             </p>
           </div>
 
-          <div className="grid gap-2 text-sm sm:grid-cols-2">
-            <div className="flex items-center gap-3 rounded-2xl border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-white/5 px-3 py-3 backdrop-blur">
-              <Mail className="h-5 w-5 text-sky-500"/>
-              <div>
-                <span className="block text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+          <div className="grid gap-3 text-sm sm:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Email
                 </span>
-                <span className="font-medium text-slate-800 dark:text-slate-200">
+              </div>
+              <div>
+                <span className="mt-2 block text-sm font-medium text-slate-800 dark:text-slate-200">
                   manmadhansiva2005@gmail.com
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-3 rounded-2xl border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-white/5 px-6 py-4 backdrop-blur">
-              <Phone className="h-5 w-5 text-sky-500" />
-              <div>
-                <span className="block text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Mobile
                 </span>
-                <span className="font-medium text-slate-800 dark:text-slate-200">
+              </div>
+              <div>
+                <span className="mt-2 block text-sm font-medium text-slate-800 dark:text-slate-200">
                   +91 9363212045
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3">
             <button
               type="button"
               onClick={handleViewResume}
-              className="group inline-flex items-center gap-3 rounded-full border border-transparent bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 px-10 py-3 font-semibold shadow-lg shadow-sky-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-purple-500/40"
+              className="inline-flex items-center gap-2 rounded-lg bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-sky-700"
             >
-              <span className="flex items-center gap-3">
-                <FileText className="h-5 w-5" />
-                <span>Click to View Resume</span>
-              </span>
+              <FileText className="h-4 w-4" />
+              <span>View Resume</span>
+              <ArrowRight className="h-4 w-4" />
             </button>
 
-            <div className="flex items-center gap-3 rounded-full border border-gray-200 dark:border-white/10 bg-white/80 dark:bg-white/5 px-5 py-3 backdrop-blur">
-              <span className="text-sm font-medium text-slate-800 dark:text-slate-200">
-                Connect with me
-              </span>
-              <div className="flex gap-2">
-                <a
-                  href="https://github.com/SMANMATHAN"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-slate-800/90 p-3 text-white transition-all duration-300 hover:bg-slate-700/90 hover:shadow-lg hover:shadow-slate-900/40"
-                  aria-label="GitHub Profile"
-                >
-                  <Github className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/manmathan-s-2282ab2a0/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-sky-500 p-3 text-white transition-all duration-300 hover:bg-sky-400 hover:shadow-lg hover:shadow-sky-500/40"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
+            <a
+              href="https://github.com/SMANMATHAN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+              aria-label="GitHub Profile"
+            >
+              <Github className="h-4 w-4" />
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/manmathan-s-2282ab2a0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin className="h-4 w-4" />
+              LinkedIn
+            </a>
           </div>
         </div>
 
-        <div className="relative w-full lg:w-[50%] mt-7">
-          <div className="absolute inset-4 rounded-[3rem] border border-white/20"></div>
-          <div className="absolute -inset-6 rounded-[3.5rem] bg-gradient-to-r from-sky-500/20 via-purple-500/20 to-pink-500/20 blur-3xl"></div>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_30px_120px_-45px_rgba(56,189,248,0.55)]">
-            <div className="relative p-6 sm:p-4">
-              <div className="relative overflow-hidden rounded-[2.4rem] border border-white/20 bg-slate-900/60">
-                {/* soft light at top and bottom of the image */}
-                <div className="pointer-events-none absolute inset-0">
-                  <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/35 via-transparent to-transparent dark:from-sky-500/20" />
-                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white/35 via-transparent to-transparent dark:from-purple-500/25" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-purple-500/15"></div>
+        <div className="relative">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-200/60 dark:border-slate-800 dark:bg-slate-900 dark:shadow-black/30">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+              <div className="absolute left-0 top-0 z-10 m-3 rounded-md bg-slate-900/85 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-white dark:bg-slate-100 dark:text-slate-900">
+                Open to Work
+              </div>
+              <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent p-4">
+                <p className="text-sm font-medium text-white">Building scalable and user-focused software solutions</p>
+              </div>
+
+              <div className="bg-slate-100 dark:bg-slate-950">
                 <img
                   src={DirectEyeContact}
                   alt="Portrait of Manmathan"
-                  className="relative h-[500px] w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.04]"
+                  className="h-[420px] w-full object-cover sm:h-[500px]"
                 />
               </div>
-              <div className="mt-5 grid gap-4 md:grid-cols-[1.3fr_1fr]">
+            </div>
+
+            <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="rounded-lg bg-slate-100 px-3 py-2 text-center dark:bg-slate-800">
+                <p className="text-xl font-bold">3+</p>
+                <p className="text-xs text-slate-600 dark:text-slate-300">Projects</p>
+              </div>
+              <div className="rounded-lg bg-slate-100 px-3 py-2 text-center dark:bg-slate-800">
+                <p className="text-xl font-bold">6M</p>
+                <p className="text-xs text-slate-600 dark:text-slate-300">Internship</p>
+              </div>
+              <div className="rounded-lg bg-slate-100 px-3 py-2 text-center dark:bg-slate-800">
+                <p className="text-xl font-bold">7.5</p>
+                <p className="text-xs text-slate-600 dark:text-slate-300">CGPA</p>
               </div>
             </div>
           </div>
