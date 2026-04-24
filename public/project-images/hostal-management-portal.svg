@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Hostal Management Portal</title>
+  <desc id="desc">Cover image for Hostal Management Portal project</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect x="120" y="110" width="960" height="580" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" />
+  <rect x="210" y="220" width="340" height="360" rx="14" fill="#f8fafc" />
+  <rect x="270" y="280" width="70" height="90" fill="#0f766e" />
+  <rect x="370" y="280" width="70" height="90" fill="#0f766e" />
+  <rect x="270" y="400" width="70" height="90" fill="#0f766e" />
+  <rect x="370" y="400" width="70" height="90" fill="#0f766e" />
+  <rect x="690" y="260" width="280" height="60" rx="10" fill="rgba(255,255,255,0.2)" />
+  <rect x="690" y="350" width="220" height="24" rx="8" fill="rgba(255,255,255,0.3)" />
+  <rect x="690" y="390" width="220" height="24" rx="8" fill="rgba(255,255,255,0.3)" />
+  <rect x="690" y="430" width="220" height="24" rx="8" fill="rgba(255,255,255,0.3)" />
+  <text x="600" y="650" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="52" text-anchor="middle" font-weight="700">Hostal Management Portal</text>
+</svg>

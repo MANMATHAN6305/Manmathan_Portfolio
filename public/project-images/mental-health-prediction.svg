@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mental Health Prediction</title>
+  <desc id="desc">Cover image for Mental Health Prediction project</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#312e81" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect x="120" y="110" width="960" height="580" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" />
+  <path d="M390 310 C390 250 440 210 500 210 C550 210 590 245 600 290 C610 245 650 210 700 210 C760 210 810 250 810 310 C810 395 740 445 600 560 C460 445 390 395 390 310 Z" fill="rgba(255,255,255,0.18)" stroke="#c4b5fd" stroke-width="4" />
+  <polyline points="430,390 500,390 535,345 585,455 635,320 685,390 770,390" fill="none" stroke="#67e8f9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="525" cy="260" r="18" fill="#a78bfa" />
+  <circle cx="675" cy="260" r="18" fill="#a78bfa" />
+  <text x="600" y="650" fill="#ecfeff" font-family="Segoe UI, Arial, sans-serif" font-size="52" text-anchor="middle" font-weight="700">Mental Health Prediction</text>
+</svg>

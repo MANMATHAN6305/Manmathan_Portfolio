@@ -1,9 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Heart, ArrowUp, Linkedin, Github, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { SiLeetcode, SiCodechef } from 'react-icons/si';
 import MsLogo from '../assests/images/MSLogo-artguru.png';
 
 const Footer: React.FC = () => {
+  const quickLinks = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Education', path: '/education' },
+    { label: 'Skills', path: '/skills' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Experience', path: '/experience' },
+    { label: 'Achievements', path: '/achievements' },
+    { label: 'Gallery', path: '/gallery' },
+    { label: 'Contact', path: '/contact' },
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -11,25 +24,25 @@ const Footer: React.FC = () => {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/manmathan-s-2282ab2a0/',
+      url: 'https://linkedin.com/in/manmathan6305',
       icon: Linkedin,
       color: 'text-blue-400 hover:text-blue-500'
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/SMANMATHAN',
+      url: 'https://github.com/MANMATHAN6305',
       icon: Github,
       color: 'text-gray-300 hover:text-white'
     },
     {
       name: 'LeetCode',
-      url: 'https://leetcode.com/u/06M05A20N05N/',
+      url: 'https://leetcode.com/u/MANMATHAN6305/',
       icon: SiLeetcode,
       color: 'text-orange-400 hover:text-orange-500'
     },
     {
       name: 'CodeChef',
-      url: 'https://www.codechef.com/users/troop_bears_54',
+      url: 'https://www.codechef.com/users/manmathan6305',
       icon: SiCodechef,
       color: 'text-yellow-400 hover:text-yellow-500'
     },
@@ -104,17 +117,14 @@ const Footer: React.FC = () => {
           <div className="space-y-4 text-center md:text-left">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2">
-              {['About', 'Projects', 'Experience', 'Skills', 'Contact'].map((link) => (
-                <li key={link}>
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById(link.toLowerCase());
-                      if (element) element.scrollIntoView({ behavior: 'smooth' });
-                    }}
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.path}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
-                    {link}
-                  </button>
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>

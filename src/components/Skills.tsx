@@ -16,7 +16,7 @@ const Skills: React.FC = () => {
     {
       title: "Backend Technologies",
       icon: <Database className="w-6 h-6" />,
-      skills: ["Node.js", "Express.js", "REST APIs", "MongoDB"],
+      skills: ["Node.js", "Express.js", "REST APIs", "MySQL"],
     },
     {
       title: "Tools & Platforms",

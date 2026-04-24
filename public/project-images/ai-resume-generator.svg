@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">AI Resume Generator</title>
+  <desc id="desc">Cover image for AI Resume Generator project</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect x="120" y="110" width="960" height="580" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" />
+  <rect x="220" y="200" width="300" height="390" rx="16" fill="#e2e8f0" />
+  <rect x="250" y="250" width="180" height="26" rx="8" fill="#94a3b8" />
+  <rect x="250" y="295" width="220" height="18" rx="6" fill="#cbd5e1" />
+  <rect x="250" y="325" width="220" height="18" rx="6" fill="#cbd5e1" />
+  <rect x="250" y="355" width="220" height="18" rx="6" fill="#cbd5e1" />
+  <rect x="250" y="400" width="150" height="18" rx="6" fill="#cbd5e1" />
+  <circle cx="720" cy="340" r="88" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" stroke-width="3" />
+  <circle cx="820" cy="420" r="58" fill="rgba(14,165,233,0.2)" stroke="#0ea5e9" stroke-width="3" />
+  <path d="M680 380 L760 300 L850 395" fill="none" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="600" y="650" fill="#e0f2fe" font-family="Segoe UI, Arial, sans-serif" font-size="56" text-anchor="middle" font-weight="700">AI Resume Generator</text>
+</svg>

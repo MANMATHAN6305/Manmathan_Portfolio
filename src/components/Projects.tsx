@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Brain, Smartphone, Image, Filter, Sparkles } from 'lucide-react';
+import { ExternalLink, Github, Brain, Image, Filter, Sparkles } from 'lucide-react';
 
 interface Project {
   id: number;
@@ -27,35 +27,35 @@ const Projects: React.FC = () => {
       impact: 'Improved resume drafting speed by automating content generation and formatting workflows.',
       tech: ['Python', 'React', 'Node.js', 'OpenAI API', 'MongoDB'],
       category: 'ai',
-      image: 'https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: 'https://github.com/SMANMATHAN/AI_RESUME_BUILDER',
-      demo: 'https://ai-resume-builder-rho-ochre.vercel.app/',
+      image: '/project-images/ai-resume-generator.svg',
+      github: 'https://github.com/MANMATHAN6305/RealAIResumeBuilder',
+      demo: 'https://manmathan6305.github.io/RealAIResumeBuilder/',
       icon: <Brain className="w-6 h-6" />
     },
     {
       id: 2,
-      title: 'College Attendance App',
-      description: 'Attendance tracking solution with analytics dashboards for faculty and students',
-      longDescription: 'A full-featured attendance management system with both mobile and web interfaces. Includes student tracking, automated reporting, and real-time analytics for educational institutions.',
-      impact: 'Reduced manual attendance overhead with centralized records and faster monthly reports.',
-      tech: ['React Native', 'Express.js', 'MySQL', 'JWT', 'React'],
-      category: 'mobile',
-      image: 'https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800',
-      github: '#',
-      demo: '#',
-      icon: <Smartphone className="w-6 h-6" />
+      title: 'Hostal Management Portal',
+      description: 'Full-stack hostel operations portal for managing residents, rooms, and requests',
+      longDescription: 'A centralized hostel management portal designed to streamline room allocation, resident records, and day-to-day administrative workflows through a clean web interface.',
+      impact: 'Improved operational visibility and reduced manual tracking through a single management dashboard.',
+      tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT'],
+      category: 'web',
+      image: '/project-images/hostal-management-portal.svg',
+      github: 'https://github.com/MANMATHAN6305/Hostal_Management_Portal',
+      demo: 'https://hostal-management-portal.onrender.com/',
+      icon: <Image className="w-6 h-6" />
     },
     {
       id: 3,
-      title: 'Train Traffic Flow with AI',
-      description: 'AI-assisted railway flow control dashboard for throughput simulation and monitoring',
-      longDescription: 'An AI-assisted decision support dashboard for railway operations focused on maximizing throughput. It models traffic scenarios, visualizes congestion risk, and helps evaluate safer and faster routing strategies.',
-      impact: 'Enabled clearer decision-making using live simulation visuals for route planning scenarios.',
-      tech: ['ReactJS', 'Typescript', 'FastAPI', 'React', 'AWS'],
+      title: 'Mental Health Prediction',
+      description: 'ML-powered prediction system for identifying mental health risk patterns from user inputs',
+      longDescription: 'A predictive analytics project focused on mental health screening using machine learning models. It processes structured inputs to estimate risk patterns and presents clear results through an accessible interface.',
+      impact: 'Provided faster preliminary risk insights to support early intervention workflows.',
+      tech: ['Python', 'Machine Learning', 'Pandas', 'Scikit-learn', 'React'],
       category: 'ai',
-      image: 'https://lh7-rt.googleusercontent.com/docsz/AD_4nXf-HITNYwo1PK09RfF2xo07s570GOSY5kVlzcLR6FQrZcJJoocxMgsoCoR5uFrKY43YcjrJl0V7T4qV5ZkLmJvySoEHy4UDEWDC3HnsQ0pWp3rbNrb3yEtYOBzA9Cfy2_iOpvIT3kuTods8JA0sYQ?key=Fs1z_K8FIehwPsc3nthqEl4q',
-      github: 'https://github.com/SMANMATHAN/rail-dashboard/tree/main/frontend%20simulation',
-      demo: 'https://rail-dashboard.vercel.app/',
+      image: '/project-images/mental-health-prediction.svg',
+      github: 'https://github.com/MANMATHAN6305/Mental_Health_Prediction',
+      demo: 'https://manmathan6305.github.io/Mental_Health_Prediction/',
       icon: <Image className="w-6 h-6" />
     }
   ];

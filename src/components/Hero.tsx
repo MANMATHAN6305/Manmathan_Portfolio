@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
   const handleViewResume = () => {
     if (typeof window !== 'undefined') {
       window.open(
-        'https://drive.google.com/file/d/1sD89LhULPxHyB2FoTNJWk7Dbnk6Itbb7/view?usp=drive_link'
+        'https://drive.google.com/file/d/1TG2dUZ4KrUtQsBTZJCmBY_ul2ItxxCpI/view'
       );
     }
   };
@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
             </button>
 
             <a
-              href="https://github.com/SMANMATHAN"
+              href="https://github.com/MANMATHAN6305"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
@@ -127,7 +127,7 @@ const Hero: React.FC = () => {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/manmathan-s-2282ab2a0/"
+              href="https://linkedin.com/in/manmathan6305"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors duration-200 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"

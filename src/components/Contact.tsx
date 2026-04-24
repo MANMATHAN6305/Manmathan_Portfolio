@@ -16,14 +16,14 @@ const contactChannels = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com',
-    href: 'https://www.linkedin.com/in/manmathan-s-2282ab2a0/',
+    value: 'linkedin.com/in/manmathan6305',
+    href: 'https://linkedin.com/in/manmathan6305',
     icon: Linkedin
   },
   {
     label: 'GitHub',
-    value: 'github.com',
-    href: 'https://github.com/SMANMATHAN',
+    value: 'github.com/MANMATHAN6305',
+    href: 'https://github.com/MANMATHAN6305',
     icon: Github
   }
 ];

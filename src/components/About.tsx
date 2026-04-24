@@ -29,25 +29,25 @@ const About: React.FC = () => {
   const socialLinks = [
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/manmathan-s-2282ab2a0/',
+      url: 'https://linkedin.com/in/manmathan6305',
       icon: Linkedin,
       color: 'text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300',
     },
     {
       name: 'GitHub',
-      url: 'https://github.com/SMANMATHAN',
+      url: 'https://github.com/MANMATHAN6305',
       icon: Github,
       color: 'text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-300',
     },
     {
       name: 'LeetCode',
-      url: 'https://leetcode.com/u/06M05A20N05N/',
+      url: 'https://leetcode.com/u/MANMATHAN6305/',
       icon: SiLeetcode,
       color: 'text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-300',
     },
     {
       name: 'CodeChef',
-      url: 'https://www.codechef.com/users/troop_bears_54',
+      url: 'https://www.codechef.com/users/manmathan6305',
       icon: SiCodechef,
       color: 'text-yellow-600 hover:text-yellow-700 dark:text-yellow-400 dark:hover:text-yellow-300',
     },
